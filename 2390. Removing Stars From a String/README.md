@@ -108,7 +108,7 @@ End time: 22:51
 
 Time spent: 19m  
 Whether to refer to others' solutions: No  
-Results of submission to Leetcode:  
+Results of submission to Leetcode: Accepted  
 
 ## Review
 
