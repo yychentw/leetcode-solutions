@@ -104,7 +104,7 @@ End time: 21:38
 ## Results
 
 Time spent: 19m  
-Whether to refer to others' solutions:  
-Results of submission to Leetcode:  
+Whether to refer to others' solutions: No  
+Results of submission to Leetcode: Accepted  
 
 ## Review
