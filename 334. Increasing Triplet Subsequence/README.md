@@ -132,7 +132,7 @@ public:
             suffix_max[i] = max(suffix_max[i+1], nums[i]);
         }
 
-        int prefix_min = nums[i];
+        int prefix_min = nums[0];
         for (int i = 1; i < n-1; i++) {
             if (nums[i] > prefix_min && nums[i] < suffix_max[i+1]) {
                 return true;
