@@ -118,3 +118,28 @@ Results of submission to Leetcode:
 最近在基本的 string/array 題比較卡關，這題看了很久沒有好的想法，就決定先參考其他人的解法。  
 
 其實有看到 one-pass 的解法，但這個解法不會找出正確的 triplet，只是輸出是否有 triplet 存在的結果是正確的，不好理解也很難跟人解釋，所以不太想採用。覺得結合 prefix_min 和 suffix_max 的方式雖然較慢，也使用較多空間，但比較能加強對演算法的理解。   
+
+後來想到稍微改進的作法（少跑一次 loop）：
+```cpp
+class Solution {
+public:
+    bool validTriplet(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> suffix_max(n, 0);
+
+        suffix_max[n-1] = nums[n-1];
+        for (int i = n-2; i >= 0; i--) {
+            suffix_max[i] = max(suffix_max[i+1], nums[i]);
+        }
+
+        int prefix_min = nums[i];
+        for (int i = 1; i < n-1; i++) {
+            if (nums[i] > prefix_min && nums[i] < suffix_max[i+1]) {
+                return true;
+            }
+            prefix_min = min(prefix_min, nums[i]);
+        }
+        return false;
+    }
+};
+```
